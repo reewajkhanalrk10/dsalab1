@@ -4,7 +4,7 @@ using namespace std;
 
 bool linkedlist ::isEmpty()
 {
-    node *temp = head; // Creating Temp node pointing to head for Traversal
+    node *temp = head; // temp node pointing head for traverse
     if (temp == NULL)
     {
         cout << "True: List is Empty \n";
@@ -29,8 +29,8 @@ void linkedlist ::addTotail(int data)
 {
     node *Newnode = new node;
     Newnode->data = data;
-    Newnode->next = NULL; // Newnode pointing to tail
-    node *temp = head;    // Creating a temporary node and assigning it to head
+    Newnode->next = NULL; // new node to tail
+    node *temp = head;    // temp node to head
     // For Empty Linked List
     if (head == NULL)
     {
@@ -40,10 +40,10 @@ void linkedlist ::addTotail(int data)
     else
     {
         while (temp->next != NULL)
-        {                      // Traversal to end of linked list
-            temp = temp->next; // assigning next node in linked list to temp
+        {                      // traversal to end of linked list
+            temp = temp->next; // temp to the next node
         }
-        temp->next = Newnode; // Assigning Newnode to next of Last node in the List
+        temp->next = Newnode; // new node to the next of last node
     }
 }
 
@@ -51,7 +51,7 @@ void linkedlist ::add(int data, node *predecessor)
 {
     node *Newnode = new node;
     Newnode->data = data;
-    node *temp = head; // Creating a temporary node and assigning it to head
+    node *temp = head; // temp nodde to head
     if (temp == NULL)
     {
         cout << "Error Previous node can't be NULL \n";
@@ -74,9 +74,9 @@ void linkedlist ::add(int data, node *predecessor)
 
 void linkedlist ::removeFromhead()
 {
-    node *temp = head; // Creating a temporary node and assigning it to head
+    node *temp = head; // temp node to head
     head = head->next; // head pointing to second node
-    delete temp;       // Deleting first node
+    delete temp;       // deleting first node
 }
 
 void linkedlist ::remove(int data)
@@ -90,7 +90,7 @@ void linkedlist ::remove(int data)
         delete Previousnode;
     }
 
-    node *temp = head; // Creating a temporary node and assigning it to head
+    node *temp = head; // temp node to head
     if (temp->next != NULL)
     {
         while (temp->next != NULL)
@@ -168,13 +168,13 @@ bool linkedlist ::search(int data)
 
 void linkedlist ::traverse()
 {
-    node *temp = head; // Creating Temp node pointing to head for Traversal
+    node *temp = head; // temp node pointing to head for traversal
     if (temp != NULL)
     {
         cout << "Your Linked List contains: ";
         while (temp != NULL)
-        {                              // Itteration till end of linked list(Reaching NULL)
-            cout << temp->data << " "; // Displaying node Data
+        {                              // loop until NULL point
+            cout << temp->data << " "; // print node data
             temp = temp->next;
         }
         cout << endl
